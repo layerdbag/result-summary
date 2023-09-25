@@ -10,7 +10,7 @@ This is a solution to the [Results Summary component challenge on Frontend Mento
 
 ### Links
 
-- Live Site URL: [QR Code]()
+- Live Site URL: [Results Summary Component](https://results-sum-comp.netlify.app/)
 
 ### Built with
 
@@ -24,4 +24,5 @@ This is a solution to the [Results Summary component challenge on Frontend Mento
 
 - Website - [Olayemi Obagboye](https://github.com/layerdbag)
 - Frontend Mentor - [@layerdbag](https://www.frontendmentor.io/profile/yourusername)
+
 # result-summary
