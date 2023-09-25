@@ -4,7 +4,9 @@ This is a solution to the [Results Summary component challenge on Frontend Mento
 
 ### Screenshot
 
-![Results Summary Component]()
+![Results Summary Component Desktop](https://github.com/layerdbag/result-summary/blob/main/assets/images/desktop.jpeg)
+![Results Summary Component Desktop](https://github.com/layerdbag/result-summary/blob/main/assets/images/ipad.jpeg)
+![Results Summary Component Desktop](https://github.com/layerdbag/result-summary/blob/main/assets/images/mobile.jpeg)
 
 ### Links
 
