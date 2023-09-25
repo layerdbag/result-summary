@@ -1,0 +1,326 @@
+/*  || Global Styles || */
+:root {
+  --clr-primary-red: hsl(0, 100%, 67%);
+  --clr-primary-yellow: hsl(39, 100%, 56%);
+  --clr-primary-teal: hsl(166, 100%, 37%);
+  --clr-primary-blue: hsl(234, 85%, 45%);
+  --clr-primary-lavender: hsl(240, 29%, 64%);
+
+  --bg-primary-red: hsla(0, 100%, 67%, 0.1);
+  --bg-primary-yellow: hsla(39, 100%, 56%, 0.1);
+  --bg-primary-teal: hsla(166, 100%, 37%, 0.1);
+  --bg-primary-blue: hsla(234, 85%, 45%, 0.1);
+
+  /* background gradient */
+  --bg-slate-blue: hsl(252, 100%, 67%);
+  --bg-royal-blue: hsl(241, 81%, 54%);
+
+/* circle gradient */
+  --bg-violet-blue: hsla(256, 72%, 46%, 1);
+  --bg-persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* neutral colors */
+  --bg-white: hsl(0, 0%, 100%);
+  --bg-pale-blue: hsl(221, 100%, 96%);
+  --bg-light-lavender: hsl(241, 100%, 89%);
+  --bg-darkgray-blue: hsl(224, 30%, 27%);
+
+/* modular scale */
+  --ratio: 1.25;
+  --fs-3: calc(var(--fs-2) / var(--ratio));
+  --fs-2: calc(var(--fs-1) / var(--ratio));
+  --fs-1: calc(var(--fs0) / var(--ratio));
+  --fs0: 1.125rem;
+  --fs1: calc(var(--fs0) * var(--ratio));
+  --fs2: calc(var(--fs1) * var(--ratio));
+  --fs3: calc(var(--fs2) * var(--ratio));
+  --fs4: calc(var(--fs3) * var(--ratio));
+  --fs5: calc(var(--fs4) * var(--ratio));
+
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-800: 800;
+}
+
+/* || Modern Resets || */
+
+  /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-block-size: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+html {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: var(--fs0);
+}
+
+/* || Component Styles */
+
+section {
+  min-block-size: 100%;
+  min-inline-size: 23.4rem;
+  margin-inline: auto;
+}
+
+section > * {
+  display: flex;
+  flex-direction: column;
+}
+
+section h2 {
+  font-size: var(--fs1);
+}
+
+section h3 {
+  font-size: var(--fs2);
+  font-weight: var(--fw-700);
+  color: var(--bg-white);
+}
+
+article {
+  padding: var(--fs2);
+}
+
+/* || Score Component */
+.score {
+  justify-content: center;
+  align-items: center;
+  border-end-end-radius: 2rem;
+  border-end-start-radius: 2rem;
+  gap: var(--fs-2);
+  color: var(--bg-pale-blue);
+  background: linear-gradient(180deg, 
+    var(--bg-slate-blue), 
+    var(--bg-royal-blue));
+}
+
+.score h2, 
+.score h3,
+.score p {
+  text-align: center;
+}
+
+.score p {
+  max-inline-size: 30ch;
+  margin-block-end: var(--fs-2);
+  line-height: var(--ratio);
+}
+
+.score__point {
+  padding: var(--fs-1);
+  block-size: min(200px, calc(20% + 50px));
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-block: var(--fs-3);
+  background: linear-gradient(180deg, 
+    var(--bg-violet-blue), 
+    var(--bg-persian-blue));
+}
+
+.score__point-value {
+  font-size: var(--fs5);
+  font-weight: var(--fw-800);
+  color: var(--bg-white);
+}
+
+.score__point > * + * {
+  display: block;
+  margin-block-start: -0.65rem;
+  color: var(--clr-primary-lavender);
+}
+
+/* || Summary Component */
+.summary {
+  font-size: var(--fs0);
+  gap: var(--fs-3);
+}
+
+.summary .summary__text {
+  font-weight: var(--fw-700);
+  color: var(--clr-primary-lavender);
+}
+
+.summary__text span {
+  color: var(--bg-darkgray-blue);
+}
+
+/* || Button */
+.summary button {
+  padding: var(--fs-2);
+  border-radius: var(--fs2);
+  border: 0;
+  font-weight: var(--fw-500);
+  color: var(--bg-pale-blue);
+  background: var(--bg-darkgray-blue);
+}
+
+.summary button:hover {
+  cursor: pointer;
+  background: linear-gradient(180deg, 
+    var(--bg-slate-blue), 
+    var(--bg-royal-blue));
+  transition: background-color 400ms ease-in-out 0.5s;
+  transform: scale(1.01);
+}
+
+/* || List Item */
+ul[role='list'] {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-block: 1rem;
+}
+
+ul li:nth-child(1) {
+  background-color: var(--bg-primary-red);
+}
+
+ul li:nth-child(2) {
+  background-color: var(--bg-primary-yellow);
+}
+
+ul li:nth-child(3) {
+  background-color: var(--bg-primary-teal);
+}
+
+ul li:nth-child(4) {
+  background-color: var(--bg-primary-blue);
+}
+
+ul li:nth-child(1) h4 {
+  color: var(--clr-primary-red);
+}
+
+ul li:nth-child(2) h4 {
+  color: var(--clr-primary-yellow);
+}
+
+ul li:nth-child(3) h4 {
+  color: var(--clr-primary-teal);
+}
+
+ul li:nth-child(4) h4 {
+  color: var(--clr-primary-blue);
+}
+
+li div {
+  display: flex;
+  flex-wrap: no-wrap;
+}
+
+li div h4 {
+  padding-inline: var(--fs-1);
+}
+
+
+/* || Media Queries */
+@media (min-width: 35em) {
+  .app {
+    display: grid;
+    min-block-size: 100vh;
+    place-content: center;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(15em, 1fr));
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px var(--bg-light-lavender);
+  }
+
+  /* || Score Component */
+  .score {
+    border-radius: 2rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .score p {
+    max-inline-size: 25ch;
+  }
+
+  .score__point {
+    block-size: min(200px, calc(50% + 25px));
+  }
+}
+
